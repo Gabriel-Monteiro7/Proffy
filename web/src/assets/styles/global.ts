@@ -13,8 +13,10 @@ export const lg = 992;
 // Dispositivos extra large (desktops grandes com 1200px ou mais)
 export const xl = 1200;
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Poppins:wght@400;700&display=swap');
-#root{
+
+:root{
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:wght@500&display=swap');
+
   --color-background: #F0F0F7;
   --color-primary-lighter: #9871F5;
   --color-primary-light: #916BEA;
@@ -34,9 +36,33 @@ export const GlobalStyle = createGlobalStyle`
   --color-box-base: #FFFFFF;
   --color-box-footer: #FAFAFC;
   font-size: 60%;
-  -webkit-font-smoothing: antialiased !important;
+  
 }
-    ::-webkit-scrollbar {
+html,body,#root{
+    height:100vh;
+}
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased !important;
+}
+#root{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+body,input,button,textarea{
+    font: 500 1.6rem Poppions;
+
+}   
+@media(min-width:700px){
+    :root{
+        font-size:62.5%
+    }
+} 
+::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
 }
