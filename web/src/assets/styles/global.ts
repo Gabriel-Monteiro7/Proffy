@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   
 }
 html,body,#root{
-    height:100vh;
+    min-height: 100vh
 }
 *{
     padding:0px;
@@ -54,9 +54,18 @@ html,body,#root{
 }
 
 body,input,button,textarea{
-    font: 500 1.6rem Poppions;
+    font: 500 1.6rem Poppins;
+    color: var(--color-text-base)
 
-}   
+}  
+h1{
+    font: 700 3rem Archivo;
+    width:auto !important;
+} 
+.container{
+    width: 90vw;
+    max-width: 700px;
+}
 @media(min-width:700px){
     :root{
         font-size:62.5%

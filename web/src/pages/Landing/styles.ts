@@ -10,51 +10,49 @@ export const Container = styled.div`
   min-height: 100vh;
   color: var(--color-text-in-primary);
 `;
-export const Content = styled.div`
-  width: 90vw;
-
-  max-width: 700px;
-  /* margin: auto; */
+export const Content = styled.div.attrs({ className: "container" })`
   text-align: center;
-  @media (min-width: 1100px) {
-    text-align: start;
-    max-width: 1100px;
-    display: grid;
-    grid-template: 350px 1fr;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas:
-      "logo hero hero"
-      "buttons buttons total";
-    .header {
-      grid-area: logo;
-      align-self: center;
+  &.container{
+    @media (min-width: 1100px) {
       text-align: start;
-      img {
-        height: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template: 350px 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        "logo hero hero"
+        "buttons buttons total";
+      .header {
+        grid-area: logo;
+        align-self: center;
+        text-align: start;
+        img {
+          height: 100%;
+        }
+        h2 {
+          font-size: 3.5rem;
+          width: 50%;
+        }
       }
-      h2 {
-        font-size: 3.5rem;
-        width: 50%;
+      .hero {
+        grid-area: hero;
       }
-    }
-    .hero {
-      grid-area: hero;
-    }
-    .buttons {
-      grid-area: buttons;
-      justify-content: flex-start;
-      a {
-        width: 22rem;
-        height: 8rem;
-        font-size: 2rem;
-        border-radius: 0.6rem;
+      .buttons {
+        grid-area: buttons;
+        justify-content: flex-start;
+        a {
+          width: 22rem;
+          height: 8rem;
+          font-size: 2rem;
+          border-radius: 0.6rem;
+        }
+        img {
+          width: 2.5rem;
+        }
       }
-      img {
-        width: 2.5rem;
+      .total {
+        grid-area: total;
       }
-    }
-    .total {
-      grid-area: total;
     }
   }
 `;
