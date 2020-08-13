@@ -13,6 +13,7 @@ export const Container = styled.div`
 export const Content = styled.div.attrs({ className: "container" })`
   text-align: center;
   padding: 20px 0px;
+  position: relative;
   @media (min-width: 1000px) {
     &.container {
       padding: 60px 0px 10px;
@@ -155,8 +156,78 @@ export const Footer = styled.footer.attrs({ className: "container" })`
 export const ContainerFooter = styled.div`
   background: #ffffff;
   width: 100%;
+  padding-top: 15px;
 `;
 
 export const IconHeart = styled.img`
   /* width: 1.2rem; */
+`;
+const flex = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const Success = styled.div`
+  cursor: pointer;
+  ${flex};
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  overflow: auto;
+  left: 0;
+  background: var(--color-primary);
+  right: 0;
+`;
+export const ContainerSuccess = styled.div.attrs({
+  className: "success",
+})<{
+  image: string;
+}>`
+  ${flex};
+  flex-direction: column;
+  background-image: ${(props) => `url(${props.image})`};
+  background-size: cover;
+  padding: 20px;
+  width: 100%;
+  img {
+    height: 90px;
+    margin-bottom: 10px;
+  }
+  strong {
+    color: #ffffff;
+    font: 700 4rem Archivo;
+    margin: 20px 0px;
+  }
+  label {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+  @media (min-width: 1000px) {
+    max-width: 1100px;
+    img {
+      height: 120px;
+    }
+    label {
+      font-size: 1.6rem;
+    }
+  }
+`;
+
+export const ButtonList = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #ffffff;
+  border: 0px;
+  background: var(--color-secundary);
+  border-radius: 0.6rem;
+  padding: 1.8rem 5rem;
+  font: 700 1.4rem Archivo;
+
+  &:hover {
+    background: var(--color-secundary-dark);
+  }
+  margin: 50px 0px 50px;
 `;

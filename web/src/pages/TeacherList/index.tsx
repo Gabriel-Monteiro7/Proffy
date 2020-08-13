@@ -59,8 +59,6 @@ const TeacherList: React.FC = () => {
     week_day: "",
     time: "",
   });
-  console.log(filterTeacher);
-
   return (
     <Container>
       <Header
@@ -111,7 +109,8 @@ const TeacherList: React.FC = () => {
                 return true;
               }
               return (
-                filterTeacher.subject === teacher.subject.name &&
+                (filterTeacher.subject === teacher.subject.name ||
+                  filterTeacher.subject === "") &&
                 (teacher.days.some((day: any) => {
                   return (
                     day.week_day?.name === filterTeacher.week_day ||
@@ -121,10 +120,10 @@ const TeacherList: React.FC = () => {
                   (filterTeacher.week_day === "" && filterTeacher.time === ""))
               );
             })
-            .map((teacher: any) => (
-              <TeacherItem>
+            .map((teacher: any, index: any) => (
+              <TeacherItem key={index}>
                 <TeacherHeader>
-                  <TeacherImage image={teacher.phodo} />
+                  <TeacherImage image={teacher.photo} />
                   <ContainerName>
                     <TeacherName>{teacher.name}</TeacherName>
                     <span>{teacher?.subject.name}</span>
@@ -137,7 +136,10 @@ const TeacherList: React.FC = () => {
                     <span>Preço/Hora</span>
                     <label>{formatPrice(teacher.price)}</label>
                   </TeacherPrice>
-                  <TeacherButton>
+                  <TeacherButton
+                    href={`https://wa.me/${"5585985192422"}?text=Eu%20tenho%20interesse%20na%20sua%20aula!`}
+                    target="_blank"
+                  title ={"Entrar em contato"}>
                     <img src={WhatsappIcon} alt={"Whatsapp"} /> Entrar em
                     contato
                   </TeacherButton>
