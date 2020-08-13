@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-// import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 // Dispositivos small (telefones em modo paisagem, com 576px ou mais)
 export const sm = 576;
@@ -52,15 +52,24 @@ html,body,#root{
     display: flex;
     align-items: center;
 }
-
+button{
+    outline:none;
+}
 body,input,button,textarea{
     font: 500 1.6rem Poppins;
     color: var(--color-text-base)
 
 }  
 h1{
-    font: 700 3rem Archivo;
-    width:auto !important;
+    font-family:Archivo;
+    font-weight:700;
+    width:100%;
+    @media (min-width: 700px) {
+        font-size:3.5rem;
+        width: 330px;
+
+    }
+    
 } 
 .container{
     width: 90vw;

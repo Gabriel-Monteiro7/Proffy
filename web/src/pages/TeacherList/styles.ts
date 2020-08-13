@@ -9,6 +9,7 @@ export const Container = styled.div.attrs({ className: "container" })`
     @media (min-width: 700px) {
       max-width: 100%;
       .form {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 16px;
@@ -64,37 +65,6 @@ export const Form = styled.div.attrs({ className: "form" })`
   /* height: 100%; */
 `;
 
-export const Label = styled.label``;
-
-export const Input = styled.input`
-  width: 100%;
-  padding: 1.5rem;
-  outline: none;
-  border: 0px;
-  border-radius: 0.8rem;
-  margin-top: 5px;
-  font: 1.6rem Archivo;
-`;
-
-export const ContainerInput = styled.div`
-  position: relative;
-  width: 100%;
-
-  & + & {
-    margin-top: 10px;
-  }
-  &:focus-within::after {
-    width: calc(100% -3.2rem);
-    height: 2px;
-    content: "";
-    background: var(--color-primary-light);
-    position: absolute;
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 0px;
-  }
-`;
-
 export const Main = styled.main`
   width: 90%;
   margin: auto;
@@ -112,7 +82,12 @@ export const TeacherHeader = styled.header`
   align-items: center;
   padding: 20px 25px 0px;
 `;
-export const TeacherImage = styled.img`
+export const TeacherImage = styled.div.attrs({ className: "image-teacher" })<{
+  image: string;
+}>`
+  background: #111111;
+  background-image: ${(props) => `url(${props.image})`};
+  background-size: cover;
   height: 7.5rem;
   width: 7.5rem;
   border-radius: 100%;
@@ -142,7 +117,7 @@ export const TeacherFooter = styled.footer`
 `;
 export const TeacherButton = styled.button`
   cursor: pointer;
-  transition: 0.3 ease-in-out;
+  transition: 0.3s ease-in-out;
   color: #ffffff;
   height: 4.5rem;
   border: 0px;

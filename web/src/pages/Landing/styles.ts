@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 export const Container = styled.div`
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
   background: var(--color-primary);
   width: 100vw;
   min-height: 100vh;
@@ -12,16 +12,17 @@ export const Container = styled.div`
 `;
 export const Content = styled.div.attrs({ className: "container" })`
   text-align: center;
-  &.container{
-    @media (min-width: 1100px) {
+  padding: 20px 0px;
+  @media (min-width: 1000px) {
+    &.container {
+      padding: 60px 0px 10px;
+
       text-align: start;
       max-width: 1100px;
       display: grid;
       grid-template: 350px 1fr;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-areas:
-        "logo hero hero"
-        "buttons buttons total";
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas: "logo logo hero";
       .header {
         grid-area: logo;
         align-self: center;
@@ -36,22 +37,6 @@ export const Content = styled.div.attrs({ className: "container" })`
       }
       .hero {
         grid-area: hero;
-      }
-      .buttons {
-        grid-area: buttons;
-        justify-content: flex-start;
-        a {
-          width: 22rem;
-          height: 8rem;
-          font-size: 2rem;
-          border-radius: 0.6rem;
-        }
-        img {
-          width: 2.5rem;
-        }
-      }
-      .total {
-        grid-area: total;
       }
     }
   }
@@ -118,10 +103,60 @@ export const IconButtons = styled.img`
   width: 2.5rem;
   margin-right: 10px;
 `;
-export const TextFooter = styled.label.attrs({ className: "total" })`
+export const TextConnection = styled.label.attrs({ className: "total" })`
   margin-left: 5px;
   align-self: center;
+  font-size: 1.3rem;
+  width: 20.3rem;
 `;
+export const TextWelcome = styled.label.attrs({ className: "welcome" })`
+  align-self: center;
+  margin: 10px 0px;
+  display: block;
+  color: var(--color-text-base);
+`;
+
+export const Footer = styled.footer.attrs({ className: "container" })`
+  text-align: center;
+  margin: auto;
+
+  @media (min-width: 1000px) {
+    &.container {
+      padding: 30px 0px;
+      text-align: start;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas: "welcome total buttons";
+      .total {
+        grid-area: total;
+        text-align: end;
+        margin: 0px 20px;
+      }
+      .welcome {
+        grid-area: welcome;
+      }
+      .buttons {
+        grid-area: buttons;
+        justify-content: flex-start;
+        a {
+          width: 25rem;
+          height: 8rem;
+          font-size: 2rem;
+          border-radius: 0.6rem;
+        }
+        img {
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+`;
+export const ContainerFooter = styled.div`
+  background: #ffffff;
+  width: 100%;
+`;
+
 export const IconHeart = styled.img`
   /* width: 1.2rem; */
 `;

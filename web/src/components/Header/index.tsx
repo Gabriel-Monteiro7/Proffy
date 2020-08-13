@@ -8,23 +8,40 @@ import {
   LogoImage,
   Back,
   Link,
+  ContainerTitle,
 } from "./styles";
 import Logo from "assets/images/logo.svg";
 import IconBack from "assets/images/icons/back.svg";
+
 interface PageHeaderProps {
   title: String;
+  description?: String;
+  label?: String;
+  more?: any;
 }
-const Header: React.FC<PageHeaderProps> = ({ title, children }) => {
+const Header: React.FC<PageHeaderProps> = ({
+  title,
+  label,
+  more,
+  children,
+}) => {
   return (
     <Container>
-      <Content>
-        <Link to="/">
-          <Back src={IconBack} alt={"Voltar"} />
-        </Link>
-        <LogoImage src={Logo} alt={"Logo"} />
-      </Content>
+      <header>
+        <Content>
+          <Link to="/">
+            <Back src={IconBack} alt={"Voltar"} />
+          </Link>
+          <span>{label}</span>
+          <LogoImage src={Logo} alt={"Logo"} />
+        </Content>
+      </header>
+
       <HeaderContent>
-        <Title>{title}</Title>
+        <ContainerTitle>
+          <Title>{title}</Title>
+          {more}
+        </ContainerTitle>
         {children}
       </HeaderContent>
     </Container>
