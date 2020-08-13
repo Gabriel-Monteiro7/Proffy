@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Form as NewForm } from "@rocketseat/unform";
-
 const flexbox = css`
   justify-content: space-between;
   display: flex;
@@ -165,3 +164,5 @@ export const Footer = styled.footer`
     }
   }
 `;
+
+

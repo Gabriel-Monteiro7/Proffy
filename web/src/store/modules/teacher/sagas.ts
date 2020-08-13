@@ -1,16 +1,14 @@
 import { takeLatest, put, all } from "redux-saga/effects";
 
 import { toast } from "react-toastify";
-import { insertSuccess} from "./actions";
-import history from "service/history";
+import { insertSuccess } from "./actions";
 
 export function* insert({ payload }: any) {
   try {
     const { data } = payload;
 
     yield put(insertSuccess(data));
-    toast.success(`Sucesso no cadastro`);
-    history.back();
+    // toast.success(`Sucesso no cadastro`);
   } catch (erro) {
     toast.error("Erro na autenticação");
   }

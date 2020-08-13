@@ -46,12 +46,12 @@ export const Container = styled.div.attrs({ className: "container" })`
               margin-left: 10px;
             }
           }
-          button {
-            width: 26rem;
-            font-size: 1.6rem;
+          a {
+            width: 24rem;
+            font-size: 1.4rem;
             justify-content: center;
             border-radius: 0.8rem;
-            height: 6rem;
+            height: 5.5rem;
           }
         }
         .no-teacher {
@@ -115,7 +115,8 @@ export const TeacherFooter = styled.footer`
   background: var(--color-box-footer);
   padding: 30px 25px;
 `;
-export const TeacherButton = styled.button`
+export const TeacherButton = styled.a`
+  text-decoration: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   color: #ffffff;

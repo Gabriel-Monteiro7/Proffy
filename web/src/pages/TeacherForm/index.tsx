@@ -21,13 +21,14 @@ import Select from "components/Select";
 import { useDispatch } from "react-redux";
 import { insertRequest } from "store/modules/teacher/actions";
 
-const Landing: React.FC = () => {
+const TeacherForm: React.FC = ({ history }: any) => {
   const dispatch = useDispatch();
-
   function handleSubmit(value: any) {
     if (selectSubject !== null && selectDay.length > 0) {
+      value.whatsapp = "55" + value.whatsapp;
       value = { ...value, subject: selectSubject, days: selectDay };
       dispatch(insertRequest(value));
+      history.push("/", true);
     }
   }
   const [selectDay, setSelectDay] = useState<any>([]);
@@ -37,8 +38,7 @@ const Landing: React.FC = () => {
     newArray[index] = { ...newArray[index], [name]: field };
     setSelectDay([...newArray]);
   }
-  console.log(selectDay);
-  
+
   return (
     <Container>
       <Header
@@ -83,7 +83,11 @@ const Landing: React.FC = () => {
                 onClick={() => {
                   setSelectDay([
                     ...selectDay,
-                    { week_day: 0, from: "00:00", to: "00:00" },
+                    {
+                      week_day: { id: 0, name: "Domingo" },
+                      from: "00:00",
+                      to: "00:00",
+                    },
                   ]);
                 }}
               >
@@ -130,4 +134,4 @@ const Landing: React.FC = () => {
   );
 };
 
-export default Landing;
+export default TeacherForm;
