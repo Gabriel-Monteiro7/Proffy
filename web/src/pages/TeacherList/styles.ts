@@ -18,8 +18,8 @@ export const Container = styled.div.attrs({ className: "container" })`
         & div + div {
           margin-top: 0px;
         }
-        input {
-          box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.24);
+        input,.select__control{
+          box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.24) !important;
         }
       }
       main {

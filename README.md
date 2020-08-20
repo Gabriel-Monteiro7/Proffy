@@ -37,9 +37,10 @@ Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
 
 - :nail_care:  **Styled Components** — Tecnologia para componentizar estilização CSS no React através do Javascript
 - :atom_symbol:  **React Js(Ts)** — Livraria Javascript para construção de interfaces;
+- :atom_symbol: **Redux Saga** — Biblioteca que foca em fazer os efeitos colaterais em aplicações serem mais fáceis e simples de se criar e manter.
 - :atom_symbol:  **React Toastify** — Permite adicionar notificações ao seu aplicativo com facilidade.
 - :atom_symbol:  **React Router Dom** — Roteamento e navegação para aplicações  que utilizam React Js
--   :lock:  **Yup** — É um construtor de esquema JavaScript para análise e validação de valor.
+- :lock:  **Yup** — É um construtor de esquema JavaScript para análise e validação de valor.
 
 ## [](<[https://github.com/Gabriel-Monteiro7/Proffy](https://github.com/Gabriel-Monteiro7/Proffy)#projeto>)Projeto
 
